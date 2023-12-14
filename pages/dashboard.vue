@@ -1,20 +1,20 @@
 <template>
   <main>
     <div class="p-4">
-      <div class="card">Home</div>
+      <div class="card">Dashboard</div>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-  name: "PageHome",
+  name: "PageDashboard",
   middleware: "auth",
 });
 
 const titlePage = useCookie("title_page");
 
 onMounted(() => {
-  titlePage.value = "Home";
+  titlePage.value = "Dashboard";
 });
 </script>

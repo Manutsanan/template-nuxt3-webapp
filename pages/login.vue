@@ -1,50 +1,55 @@
 <template>
-  <div class="card">
-    <div class="flex items-center align-bottom gap-2">
-      <h1 class="text-2xl font-bold">TEMPLATE</h1>
-      <span class="text-sm">LOGIN</span>
-    </div>
-    <hr class="py-1" />
-    <form class="grid gap-2" @submit="onSubmit">
-      <div>
-        <label>{{ $t("Username") }}</label>
-        <div
-          class="form-input-group"
-          :class="(form.username && 'is-valid') || 'is-invalid'"
-        >
-          <input type="text" v-model="form.username" placeholder="Username" />
+  <div
+    class="container mx-auto flex flex-col items-center justify-center h-full"
+  >
+    <div class="flex flex-col gap-3">
+      <span class="text-4xl font-semibold"> Sign in </span>
+      <div><span>Mange - Template</span></div>
+
+      <form class="flex flex-col gap-3" @submit="onSubmit">
+        <div class="form-input">
+          <div
+            class="absolute top-[2px] bottom-[2px] flex justify-center items-center px-4 rounded start-px"
+          >
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <input
+            type="text"
+            v-model="form.username"
+            style="padding-left: 32.5px"
+          />
         </div>
-      </div>
-      <div>
-        <label>{{ $t("Password") }}</label>
-        <div
-          class="form-input-group"
-          :class="(form.password && 'is-valid') || 'is-invalid'"
-        >
+        <div class="form-input">
+          <div
+            class="absolute top-[2px] bottom-[2px] flex justify-center items-center px-4 rounded start-px"
+          >
+            <i class="fa-regular fa-key"></i>
+          </div>
           <input
             :type="(showPassword && 'text') || 'Password'"
             v-model="form.password"
-            placeholder="password"
+            style="padding: 6.5px 32.5px"
           />
-          <div class="icon-back">
+          <div
+            class="absolute top-[2px] bottom-[2px] flex justify-center items-center px-4 rounded end-px"
+          >
             <i
-              class="fa-solid cursor-pointer eye-password"
+              class="fa-regular cursor-pointer eye-password"
               :class="(showPassword && 'fa-eye') || 'fa-eye-slash'"
               @click="showPassword = !showPassword"
             ></i>
           </div>
         </div>
-      </div>
-      <div class="12 text-end">
-        <button type="submit" class="btn-secondary" :disabled="loading">
+
+        <button type="submit" class="btn-primary" :disabled="loading">
           <i
             v-if="loading"
-            class="fa-duotone fa-spinner-third animate-spin"
+            class="fa-sharp fa-solid fa-spinner-third animate-spin"
           ></i>
-          {{ (loading && $t("Loading")) || $t("Login") }}
+          {{ (loading && "Loading") || "Sign in" }}
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -52,7 +57,7 @@
 import { type LoginRequest } from "@/models/auth.model";
 
 definePageMeta({
-  name: "LoginPage",
+  name: "PageLogin",
   layout: "custom",
   middleware: "login",
 });
@@ -111,14 +116,3 @@ const onSubmit = async (event: Event) => {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.card {
-  padding: 12px;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  background-color: #fff;
-  width: 300px;
-  color: #000;
-}
-</style>

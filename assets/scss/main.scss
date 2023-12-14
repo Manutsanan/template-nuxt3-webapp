@@ -1,11 +1,15 @@
+@import './badges';
 @import './button';
 @import './form';
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 html,
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: rgba(0, 0, 0, 0.79);
   color: #fff;
+  font-size: 13px;
 }
 
 .table {
@@ -16,7 +20,7 @@ body {
       border: 1px solid #e2e8ef;
 
       th {
-        @apply px-3 sm:px-3 md:px-2 py-2;
+        @apply px-3 sm:px-3 md:px-4 py-3.5;
         font-size: 14px;
         vertical-align: middle;
         font-weight: 500;
@@ -31,7 +35,7 @@ body {
       }
 
       td {
-        @apply px-3 sm:px-3 md:px-2 py-2.5;
+        @apply px-3 sm:px-3 md:px-4 py-3;
         font-size: 14px;
         vertical-align: middle;
         font-weight: 300;
@@ -62,4 +66,16 @@ body {
     width: 0;
     background-color: transparent;
   }
+}
+
+main {
+  @apply flex shrink-0 grow flex-col;
+
+  .top-nav {
+    @apply sticky top-[79px] sm:top-[79px] md:top-[76.5px] z-[9] flex flex-wrap justify-between align-middle items-end gap-4 border-b border-zinc-800/50 bg-zinc-900/75 px-6 py-4 backdrop-blur-md text-white;
+  }
+}
+
+.card {
+  @apply flex flex-col bg-zinc-900 rounded-xl h-full p-6;
 }

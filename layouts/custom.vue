@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <slot />
+    <slot></slot>
   </div>
 </template>
 
@@ -21,7 +21,7 @@
 defineComponent({
   setup() {
     definePageMeta({
-      name: "CustomLayout",
+      name: "LayoutCustom",
     });
   },
 });
