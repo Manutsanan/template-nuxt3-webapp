@@ -1,23 +1,76 @@
-.badges-secondary {
-  @apply inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10;
+.badge{
+  @apply inline-flex items-center justify-center px-2 border-2 rounded-lg;
 }
 
-.badges-danger {
-  @apply inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10;
+.badge-secondary {
+  @extend .badge;
+  @apply text-white bg-zinc-500 border-transparent;
+}
+.badge-outline-secondary {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-zinc-500/50 text-black dark:text-white;
 }
 
-.badges-warning {
-  @apply inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20;
+.badge-danger {
+  @extend .badge;
+  @apply text-white bg-red-500 border-transparent;
+}
+.badge-outline-danger {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-red-500/50 text-black dark:text-white;
 }
 
-.badges-info {
-  @apply inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10;
+.badge-warning {
+  @extend .badge;
+  @apply text-white bg-amber-500 border-transparent;
+}
+.badge-outline-warning {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-amber-500/50 text-black dark:text-white;
 }
 
-.badges-success {
-  @apply inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20;
+.badge-lime {
+  @extend .badge;
+  @apply text-white bg-lime-500 border-transparent;
+}
+.badge-outline-lime {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-lime-500/50 text-black dark:text-white;
 }
 
-.badges-primary {
-  @apply inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10;
+.badge-success {
+  @extend .badge;
+  @apply text-white bg-emerald-500 border-transparent;
+}
+.badge-outline-success {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-emerald-500/50 text-black dark:text-white;
+}
+
+
+.badge-info {
+  @extend .badge;
+  @apply text-white bg-sky-500 border-transparent;
+}
+.badge-outline-info {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-sky-500/50 text-black dark:text-white;
+}
+
+.badge-primary {
+  @extend .badge;
+  @apply text-white bg-blue-500 border-transparent;
+}
+.badge-outline-primary {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-blue-500/50 text-black dark:text-white;
+}
+
+.badge-violet {
+  @extend .badge;
+  @apply text-white bg-violet-500 border-transparent;
+}
+.badge-outline-violet {
+  @extend .badge;
+  @apply  bg-transparent border-2 border-violet-500/50 text-black dark:text-white;
 }

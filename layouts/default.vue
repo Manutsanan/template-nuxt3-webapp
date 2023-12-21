@@ -224,21 +224,14 @@ const menus = ref<any>([
     show: false,
     childs: [
       {
-        name: "Button",
-        icon: "fa-sharp fa-light fa-square-code",
-        to: "/button",
+        name: "Component",
+        icon: "fa-sharp fa-regular fa-sparkles",
+        to: "/ui/component",
       },
-    ],
-  },
-  {
-    name: "Form",
-    icon: "fa-regular fa-pen-to-square",
-    show: false,
-    childs: [
       {
         name: "Input",
         icon: "fa-sharp fa-light fa-square-code",
-        to: "/input",
+        to: "/ui/input",
       },
     ],
   },

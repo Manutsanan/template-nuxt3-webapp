@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: "PageInput",
+  name: "PageFormInput",
   middleware: "auth",
 });
 
