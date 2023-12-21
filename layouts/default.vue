@@ -64,14 +64,14 @@
           </button>
         </div>
 
-        <div class="h-full px-6 no-scrollbar">
-          <nav>
-            <ul>
-              <li
-                v-for="menu in menus"
-                :key="menu.index"
-                class="cursor-pointer flex list-none items-center overflow-hidden whitespace-nowrap"
-              >
+        <nav class="h-full px-6 no-scrollbar">
+          <ul>
+            <li
+              v-for="menu in menus"
+              :key="menu.index"
+              class="cursor-pointer flex list-none items-center overflow-hidden whitespace-nowrap pb-1"
+            >
+              <template v-if="!menu?.childs">
                 <NuxtLink
                   :to="menu.to"
                   class="menu-bar"
@@ -86,10 +86,65 @@
                     </div>
                   </div>
                 </NuxtLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
+              </template>
+              <template v-else>
+                <div class="flex flex-col w-full">
+                  <div
+                    class="menu-bar grow"
+                    :class="(menu.show && 'menu-active') || ''"
+                    @click="menu.show = !menu.show"
+                  >
+                    <i :class="menu.icon" class="w-6 flex-none me-2 ms-1"></i>
+                    <div
+                      class="flex w-full items-center justify-between truncate"
+                    >
+                      <div class="overflow-hidden truncate whitespace-nowrap">
+                        {{ menu.name }}
+                      </div>
+                      <i
+                        class="fa-thin fa-chevron-down transition ease-in-out delay-200"
+                        :class="(menu.show && 'rotate-0') || 'rotate-180'"
+                      ></i>
+                    </div>
+                  </div>
+                  <ul
+                    class="transition ease-in-out delay-200 overflow-hidden"
+                    :class="[
+                      (isShow && 'ml-5') || 'ml-0',
+                      (menu.show && 'h-auto') || 'h-0',
+                    ]"
+                  >
+                    <li
+                      v-for="child in menu.childs"
+                      :key="child.index"
+                      class="cursor-pointer flex list-none items-center overflow-hidden whitespace-nowrap pb-1"
+                    >
+                      <NuxtLink
+                        :to="child.to"
+                        class="menu-bar"
+                        @click="isMobile && hiddenMenu()"
+                      >
+                        <i
+                          :class="child.icon"
+                          class="w-6 flex-none me-2 ms-1"
+                        ></i>
+                        <div
+                          class="flex w-full items-center justify-between truncate"
+                        >
+                          <div
+                            class="overflow-hidden truncate whitespace-nowrap"
+                          >
+                            {{ child.name }}
+                          </div>
+                        </div>
+                      </NuxtLink>
+                    </li>
+                  </ul>
+                </div>
+              </template>
+            </li>
+          </ul>
+        </nav>
       </div>
     </aside>
 
@@ -155,6 +210,7 @@ defineComponent({
 });
 
 const titlePage = useCookie("title_page");
+const route = useRoute();
 
 const isShow = ref<boolean>(true);
 const screenWidth = ref<number>(0);
@@ -162,16 +218,51 @@ const screenWidthMobile = ref<number>(1280);
 const menus = ref<any>([
   { name: "Home", icon: "fa-regular fa-house", to: "/" },
   { name: "Dashboard", icon: "fa-regular fa-rocket", to: "/dashboard" },
+  {
+    name: "UI",
+    icon: "fa-sharp fa-regular fa-puzzle-piece",
+    show: false,
+    childs: [
+      {
+        name: "Button",
+        icon: "fa-sharp fa-light fa-square-code",
+        to: "/button",
+      },
+    ],
+  },
+  {
+    name: "Form",
+    icon: "fa-regular fa-pen-to-square",
+    show: false,
+    childs: [
+      {
+        name: "Input",
+        icon: "fa-sharp fa-light fa-square-code",
+        to: "/input",
+      },
+    ],
+  },
 ]);
 
 const isMobile = computed(() => {
   return screenWidth.value <= screenWidthMobile.value;
 });
 
+watch(
+  () => route.path,
+  () => {
+    checkMenuActive();
+  },
+  {
+    deep: true,
+  }
+);
+
 onMounted(() => {
   if (typeof window !== "undefined") {
     initDate();
   }
+  checkMenuActive();
 });
 
 const initDate = () => {
@@ -182,6 +273,18 @@ const initDate = () => {
 const updateScreenWidth = () => {
   screenWidth.value = window.innerWidth;
   isShow.value = isMobile.value ? false : true;
+};
+
+const checkMenuActive = () => {
+  for (let i = 0; i < menus.value.length; i++) {
+    const menu = menus.value[i];
+    if (menu.childs) {
+      for (let ii = 0; ii < menu.childs.length; ii++) {
+        const child = menu.childs[ii];
+        menu.show = child.to === route.path;
+      }
+    }
+  }
 };
 
 const hiddenMenu = () => {
@@ -203,6 +306,9 @@ const onLogout = () => {
 
   &.router-link-exact-active {
     @apply text-zinc-100 border-zinc-800;
+  }
+  &.menu-active {
+    @apply text-zinc-100;
   }
 }
 </style>
