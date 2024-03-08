@@ -7,8 +7,6 @@
 html,
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: rgba(0, 0, 0, 0.79);
-  color: #fff;
   font-size: 13px;
 }
 
@@ -72,10 +70,10 @@ main {
   @apply flex shrink-0 grow flex-col;
 
   .top-nav {
-    @apply sticky top-[79px] sm:top-[79px] md:top-[76.5px] z-[9] flex flex-wrap justify-between align-middle items-end gap-4 border-b border-zinc-800/50 bg-zinc-900/75 px-6 py-4 backdrop-blur-md text-white;
+    @apply sticky top-[79px] sm:top-[79px] md:top-[76.5px] z-[9] flex flex-wrap justify-between align-middle items-center gap-4 border-b border-zinc-300/50 bg-white/75 px-6 py-4 backdrop-blur-md;
   }
 }
 
 .card {
-  @apply flex flex-col bg-zinc-900 rounded-xl h-full p-6;
+  @apply flex flex-col bg-white rounded-xl h-full p-6;
 }

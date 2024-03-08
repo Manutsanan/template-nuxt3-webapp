@@ -3,8 +3,49 @@
     class="container mx-auto flex flex-col items-center justify-center h-full"
   >
     <div class="flex flex-col gap-3">
-      <span class="text-4xl font-semibold"> Sign in </span>
-      <div><span>Mange - Template</span></div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 198.43 176.06"
+          class="h-12"
+        >
+          <g>
+            <rect
+              fill="#3b82f675"
+              x="0"
+              y="88.03"
+              width="141.73"
+              height="88.03"
+              rx="44.02"
+              ry="44.02"
+            ></rect>
+            <rect
+              fill="#3b82f6d0"
+              x="0"
+              y="44.02"
+              width="170.08"
+              height="88.03"
+              rx="44.02"
+              ry="44.02"
+            ></rect>
+            <rect
+              fill="#3b82f6f0"
+              x="0"
+              y="0"
+              width="198.43"
+              height="88.03"
+              rx="44.02"
+              ry="44.02"
+            ></rect>
+          </g>
+        </svg>
+      </div>
+      <div class="py-4">
+        <span class="text-4xl font-semibold"> Sign in </span>
+      </div>
+      <div>
+        <span>Mange - Template</span>
+      </div>
 
       <form class="flex flex-col gap-3" @submit="onSubmit">
         <div class="form-input">
@@ -41,7 +82,11 @@
           </div>
         </div>
 
-        <button type="submit" class="btn-primary" :disabled="loading">
+        <button
+          type="submit"
+          class="btn-primary text-xl font-semibold"
+          :disabled="loading"
+        >
           <i
             v-if="loading"
             class="fa-sharp fa-solid fa-spinner-third animate-spin"

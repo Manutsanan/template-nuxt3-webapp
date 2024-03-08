@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <div class="language">
+    <!-- <div class="language">
       <div v-for="(item, index) in locales" :key="index">
         <img
           class="flag"
@@ -11,7 +11,7 @@
           @click="setLocale(item.code)"
         />
       </div>
-    </div>
+    </div> -->
 
     <slot></slot>
   </div>
@@ -26,14 +26,14 @@ defineComponent({
   },
 });
 
-const { locales, locale, setLocale }: any = useI18n();
+// const { locales, locale, setLocale }: any = useI18n();
 
-onMounted(() => {
-  const i18n_redirected = useCookie("i18n_redirected");
-  if (i18n_redirected) {
-    setLocale(i18n_redirected.value);
-  }
-});
+// onMounted(() => {
+//   const i18n_redirected = useCookie("i18n_redirected");
+//   if (i18n_redirected) {
+//     setLocale(i18n_redirected.value);
+//   }
+// });
 </script>
 
 <style lang="scss">

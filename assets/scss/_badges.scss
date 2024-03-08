@@ -1,5 +1,5 @@
 .badge{
-  @apply inline-flex items-center justify-center px-2 border-2 rounded-lg;
+  @apply inline-flex items-center justify-center px-2 py-1 border-2 rounded-lg;
 }
 
 .badge-secondary {
@@ -8,7 +8,7 @@
 }
 .badge-outline-secondary {
   @extend .badge;
-  @apply  bg-transparent border-2 border-zinc-500/50 text-black;
+  @apply  bg-transparent border-2 border-zinc-500/50 text-zinc-500;
 }
 
 .badge-danger {
@@ -17,7 +17,7 @@
 }
 .badge-outline-danger {
   @extend .badge;
-  @apply  bg-transparent border-2 border-red-500/50 text-black;
+  @apply  bg-transparent border-2 border-red-500/50 text-red-500;
 }
 
 .badge-warning {
@@ -26,7 +26,7 @@
 }
 .badge-outline-warning {
   @extend .badge;
-  @apply  bg-transparent border-2 border-amber-500/50 text-black;
+  @apply  bg-transparent border-2 border-amber-500/50 text-amber-500;
 }
 
 .badge-lime {
@@ -35,7 +35,7 @@
 }
 .badge-outline-lime {
   @extend .badge;
-  @apply  bg-transparent border-2 border-lime-500/50 text-black;
+  @apply  bg-transparent border-2 border-lime-500/50 text-lime-500;
 }
 
 .badge-success {
@@ -44,7 +44,7 @@
 }
 .badge-outline-success {
   @extend .badge;
-  @apply  bg-transparent border-2 border-emerald-500/50 text-black;
+  @apply  bg-transparent border-2 border-emerald-500/50 text-emerald-500;
 }
 
 
@@ -54,7 +54,7 @@
 }
 .badge-outline-info {
   @extend .badge;
-  @apply  bg-transparent border-2 border-sky-500/50 text-black;
+  @apply  bg-transparent border-2 border-sky-500/50 text-sky-500;
 }
 
 .badge-primary {
@@ -63,7 +63,7 @@
 }
 .badge-outline-primary {
   @extend .badge;
-  @apply  bg-transparent border-2 border-blue-500/50 text-black;
+  @apply  bg-transparent border-2 border-blue-500/50 text-blue-500;
 }
 
 .badge-violet {
@@ -72,5 +72,5 @@
 }
 .badge-outline-violet {
   @extend .badge;
-  @apply  bg-transparent border-2 border-violet-500/50 text-black;
+  @apply  bg-transparent border-2 border-violet-500/50 text-violet-500;
 }

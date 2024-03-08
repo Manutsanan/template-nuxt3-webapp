@@ -1,7 +1,7 @@
 <template>
   <div class="flex grow flex-col h-screen w-full">
     <aside
-      class="fixed bottom-0 top-0 z-30 md:z-20 flex flex-col border-zinc-800/50 bg-zinc-900 py-6 ltr:border-r rtl:border-l text-white transition-all duration-300 ease-in-out max-md:shadow-2xl ltr:max-md:-left-[20rem] ltr:max-md:left-0 rtl:max-md:-right-[20rem] rtl:max-md:right-0 overflow-hidden"
+      class="fixed bottom-0 top-0 z-30 md:z-20 flex flex-col border-zinc-300/25 bg-white py-6 ltr:border-r rtl:border-l transition-all duration-300 ease-in-out max-md:shadow-2xl ltr:max-md:-left-[20rem] ltr:max-md:left-0 rtl:max-md:-right-[20rem] rtl:max-md:right-0 overflow-hidden"
       :class="
         (isShow && 'w-[20rem] sm:w-[20rem] md:w-[20rem]') ||
         'w-0 sm:w-0 md:w-[6.225em]'
@@ -149,14 +149,16 @@
     </aside>
 
     <section
-      class="flex flex-auto flex-col transition-all duration-300 ease-in-out h-screen w-full sm:pl-0 scrollbar-auto"
+      class="flex flex-auto flex-col transition-all duration-300 ease-in-out h-screen w-full sm:pl-0 scrollbar-auto bg-zinc-100"
       :class="(isShow && 'md:pl-[20rem]') || 'md:pl-[6.225em]'"
     >
       <!-- Header -->
       <header
-        class="sticky top-0 z-10 flex justify-between gap-4 border-b border-zinc-800/50 text-white bg-zinc-900/75 p-6 backdrop-blur-md"
+        class="sticky top-0 z-10 flex flex-wrap justify-between gap-4 border-b border-zinc-300/25 bg-white/75 p-6 backdrop-blur-md"
       >
-        <div class="flex items-center gap-4 ltr:md:mr-auto rtl:md:ml-auto">
+        <div
+          class="flex flex-wrap items-center gap-4 ltr:md:mr-auto rtl:md:ml-auto"
+        >
           <button
             type="button"
             class="flex sm:flex md:hidden h-12 w-12 items-center justify-center"
@@ -164,17 +166,14 @@
           >
             <i class="fa-solid fa-bars text-xl"></i>
           </button>
-          <div class="breadcrumb">
-            <div class="text-lg font-semibold">{{ titlePage || "" }}</div>
-          </div>
+
+          <Breadcrumb />
         </div>
 
-        <div class="flex items-center gap-4 ltr:md:ml-auto rtl:md:mr-auto">
-          <button
-            type="button"
-            class="inline-flex items-center justify-center bg-transparent text-zinc-400 border-2 border-transparent hover:text-blue-500 active:text-blue-500 px-1.5 py-1.5 text-base rounded-lg transition-all duration-300 ease-in-out"
-            @click="onLogout()"
-          >
+        <div
+          class="flex flex-wrap items-center gap-2 ltr:md:ml-auto rtl:md:mr-auto"
+        >
+          <button type="button" class="btn-default-info" @click="onLogout()">
             <i class="fa-regular fa-right-from-bracket text-xl"></i>
           </button>
         </div>
@@ -209,7 +208,6 @@ defineComponent({
   },
 });
 
-const titlePage = useCookie("title_page");
 const route = useRoute();
 
 const isShow = ref<boolean>(true);
@@ -227,11 +225,6 @@ const menus = ref<any>([
         name: "Component",
         icon: "fa-sharp fa-regular fa-sparkles",
         to: "/ui/component",
-      },
-      {
-        name: "Input",
-        icon: "fa-sharp fa-light fa-square-code",
-        to: "/ui/input",
       },
     ],
   },
@@ -251,13 +244,6 @@ watch(
   }
 );
 
-onMounted(() => {
-  if (typeof window !== "undefined") {
-    initDate();
-  }
-  checkMenuActive();
-});
-
 const initDate = () => {
   updateScreenWidth();
   window.addEventListener("resize", updateScreenWidth);
@@ -271,11 +257,17 @@ const updateScreenWidth = () => {
 const checkMenuActive = () => {
   for (let i = 0; i < menus.value.length; i++) {
     const menu = menus.value[i];
-    if (menu.childs) {
+
+    if (menu?.childs?.length) {
+      let showMenu = false;
       for (let ii = 0; ii < menu.childs.length; ii++) {
         const child = menu.childs[ii];
-        menu.show = child.to === route.path;
+        if (child.to === route.path) {
+          showMenu = true;
+        }
       }
+
+      menu.show = showMenu;
     }
   }
 };
@@ -291,17 +283,25 @@ const onLogout = () => {
 
   location.reload();
 };
+
+onMounted(() => {
+  if (typeof window !== "undefined") {
+    initDate();
+  }
+
+  checkMenuActive();
+});
 </script>
 
 <style lang="scss" scoped>
 .menu-bar {
-  @apply p-3 flex justify-start align-middle items-center cursor-pointer overflow-hidden rounded-xl border text-zinc-500 hover:text-zinc-100 grow transition-all duration-300 ease-in-out border-transparent;
+  @apply p-3 flex justify-start align-middle items-center cursor-pointer overflow-hidden rounded-xl border text-zinc-500 hover:text-zinc-950 grow transition-all duration-300 ease-in-out border-transparent;
 
   &.router-link-exact-active {
-    @apply text-zinc-100 border-zinc-800;
+    @apply text-zinc-950 border-zinc-300;
   }
   &.menu-active {
-    @apply text-zinc-100;
+    @apply text-zinc-950;
   }
 }
 </style>
