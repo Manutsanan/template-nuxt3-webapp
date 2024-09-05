@@ -89,7 +89,7 @@
         >
           <i
             v-if="loading"
-            class="fa-sharp fa-solid fa-spinner-third animate-spin"
+            class="fa-sharp fa-solid fa-spinner-third animate-spin mr-2"
           ></i>
           {{ (loading && "Loading") || "Sign in" }}
         </button>
@@ -130,6 +130,7 @@ const onSubmit = async (event: Event) => {
   }
 
   loading.value = true;
+
   try {
     // const response: any = await service.auth.login({
     //   username: form.username,

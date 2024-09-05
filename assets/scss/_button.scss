@@ -5,7 +5,7 @@
 // secondary
 .btn-secondary {
   @extend .btn;
-  @apply  bg-zinc-500 border-2 border-zinc-500 text-white hover:bg-zinc-600 hover:border-zinc-600 active:bg-zinc-600 active:border-zinc-600;
+  @apply bg-zinc-500 border-2 border-zinc-500 text-white hover:bg-zinc-600 hover:border-zinc-600 active:bg-zinc-600 active:border-zinc-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -13,7 +13,7 @@
 }
 .btn-outline-secondary {
   @extend .btn;
-  @apply  bg-transparent border-2 border-zinc-500/50 text-zinc-500 hover:text-zinc-600 hover:border-zinc-500 active:border-zinc-500;
+  @apply bg-transparent border-2 border-zinc-500/50 text-zinc-500 hover:text-zinc-600 hover:border-zinc-500 active:border-zinc-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -21,7 +21,7 @@
 }
 .btn-default-secondary {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-zinc-500 active:text-zinc-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-zinc-500 active:text-zinc-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -31,7 +31,7 @@
 // danger
 .btn-danger {
   @extend .btn;
-  @apply  bg-red-500 border-2 border-red-500 text-white hover:bg-red-600 hover:border-red-600 active:bg-red-600 active:border-red-600;
+  @apply bg-red-500 border-2 border-red-500 text-white hover:bg-red-600 hover:border-red-600 active:bg-red-600 active:border-red-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -39,7 +39,7 @@
 }
 .btn-outline-danger {
   @extend .btn;
-  @apply  bg-transparent border-2 border-red-500/50 text-zinc-500 hover:text-red-500 hover:border-red-500 active:border-red-500;
+  @apply bg-transparent border-2 border-red-500/50 text-zinc-500 hover:text-red-500 hover:border-red-500 active:border-red-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -47,7 +47,7 @@
 }
 .btn-default-danger {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-red-500 active:text-red-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-red-500 active:text-red-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -57,7 +57,7 @@
 // warning
 .btn-warning {
   @extend .btn;
-  @apply  bg-amber-500 border-2 border-amber-500 text-white hover:bg-amber-600 hover:border-amber-600 active:bg-amber-600 active:border-amber-600;
+  @apply bg-amber-500 border-2 border-amber-500 text-white hover:bg-amber-600 hover:border-amber-600 active:bg-amber-600 active:border-amber-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -65,7 +65,7 @@
 }
 .btn-outline-warning {
   @extend .btn;
-  @apply  bg-transparent border-2 border-amber-500/50 text-zinc-500 hover:text-amber-500 hover:border-amber-500 active:border-amber-500;
+  @apply bg-transparent border-2 border-amber-500/50 text-zinc-500 hover:text-amber-500 hover:border-amber-500 active:border-amber-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -73,7 +73,7 @@
 }
 .btn-default-warning {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-amber-500 active:text-amber-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-amber-500 active:text-amber-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -83,7 +83,7 @@
 // lime
 .btn-lime {
   @extend .btn;
-  @apply  bg-lime-500 border-2 border-lime-500 text-white hover:bg-lime-600 hover:border-lime-600 active:bg-lime-600 active:border-lime-600;
+  @apply bg-lime-500 border-2 border-lime-500 text-white hover:bg-lime-600 hover:border-lime-600 active:bg-lime-600 active:border-lime-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -91,7 +91,7 @@
 }
 .btn-outline-lime {
   @extend .btn;
-  @apply  bg-transparent border-2 border-lime-500/50 text-zinc-500 hover:text-lime-500 hover:border-lime-500 active:border-lime-500;
+  @apply bg-transparent border-2 border-lime-500/50 text-zinc-500 hover:text-lime-500 hover:border-lime-500 active:border-lime-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -99,7 +99,7 @@
 }
 .btn-default-lime {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-lime-500 active:text-lime-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-lime-500 active:text-lime-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -109,7 +109,7 @@
 // success
 .btn-success {
   @extend .btn;
-  @apply  bg-emerald-500 border-2 border-emerald-500 text-white hover:bg-emerald-600 hover:border-emerald-600 active:bg-emerald-600 active:border-emerald-600;
+  @apply bg-emerald-500 border-2 border-emerald-500 text-white hover:bg-emerald-600 hover:border-emerald-600 active:bg-emerald-600 active:border-emerald-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -117,7 +117,7 @@
 }
 .btn-outline-success {
   @extend .btn;
-  @apply  bg-transparent border-2 border-emerald-500/50 text-zinc-500 hover:text-emerald-500 hover:border-emerald-500 active:border-emerald-500;
+  @apply bg-transparent border-2 border-emerald-500/50 text-zinc-500 hover:text-emerald-500 hover:border-emerald-500 active:border-emerald-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -125,7 +125,7 @@
 }
 .btn-default-success {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-emerald-500 active:text-emerald-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-emerald-500 active:text-emerald-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -135,7 +135,7 @@
 // info
 .btn-info {
   @extend .btn;
-  @apply  bg-sky-500 border-2 border-sky-500 text-white hover:bg-sky-600 hover:border-sky-600 active:bg-sky-600 active:border-sky-600;
+  @apply bg-sky-500 border-2 border-sky-500 text-white hover:bg-sky-600 hover:border-sky-600 active:bg-sky-600 active:border-sky-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -143,7 +143,7 @@
 }
 .btn-outline-info {
   @extend .btn;
-  @apply  bg-transparent border-2 border-sky-500/50 text-zinc-500 hover:text-sky-500 hover:border-sky-500 active:border-sky-500;
+  @apply bg-transparent border-2 border-sky-500/50 text-zinc-500 hover:text-sky-500 hover:border-sky-500 active:border-sky-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -151,7 +151,7 @@
 }
 .btn-default-info {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-sky-500 active:text-sky-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-sky-500 active:text-sky-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -161,7 +161,7 @@
 // primary
 .btn-primary {
   @extend .btn;
-  @apply  bg-blue-500 border-2 border-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 active:bg-blue-600 active:border-blue-600;
+  @apply bg-blue-500 border-2 border-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 active:bg-blue-600 active:border-blue-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -169,7 +169,7 @@
 }
 .btn-outline-primary {
   @extend .btn;
-  @apply  bg-transparent border-2 border-blue-500/50 text-zinc-500 hover:text-blue-500 hover:border-blue-500 active:border-blue-500;
+  @apply bg-transparent border-2 border-blue-500/50 text-zinc-500 hover:text-blue-500 hover:border-blue-500 active:border-blue-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -177,7 +177,7 @@
 }
 .btn-default-primary {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-blue-500 active:text-blue-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-blue-500 active:text-blue-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -187,7 +187,7 @@
 // violet
 .btn-violet {
   @extend .btn;
-  @apply  bg-violet-500 border-2 border-violet-500 text-white hover:bg-violet-600 hover:border-violet-600 active:bg-violet-600 active:border-violet-600;
+  @apply bg-violet-500 border-2 border-violet-500 text-white hover:bg-violet-600 hover:border-violet-600 active:bg-violet-600 active:border-violet-600;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -195,7 +195,7 @@
 }
 .btn-outline-violet {
   @extend .btn;
-  @apply  bg-transparent border-2 border-violet-500/50 text-zinc-500 hover:text-violet-500 hover:border-violet-500 active:border-violet-500;
+  @apply bg-transparent border-2 border-violet-500/50 text-zinc-500 hover:text-violet-500 hover:border-violet-500 active:border-violet-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
@@ -203,10 +203,9 @@
 }
 .btn-default-violet {
   @extend .btn;
-  @apply  bg-transparent text-zinc-500 border-2 border-transparent hover:text-violet-500 active:text-violet-500;
+  @apply bg-transparent text-zinc-500 border-2 border-transparent hover:text-violet-500 active:text-violet-500;
 
   &.is-disabled {
     @apply opacity-50 pointer-events-none;
   }
 }
-
