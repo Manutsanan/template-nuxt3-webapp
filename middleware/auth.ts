@@ -1,7 +1,7 @@
 import { setCookie } from "~/composables/useCookie";
 
 export default defineNuxtRouteMiddleware((to, from) => {
-    verify()
+    // verify()
     const refToken = setCookie('token')
 
     if (!refToken.value) {

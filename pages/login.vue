@@ -101,6 +101,12 @@
 <script setup lang="ts">
 import { type LoginRequest } from "@/models/auth.model";
 
+// import { type ResponseMessage, type ResponseWithPagination, type Paginate } from "@/models/http.model";
+
+// import { type ResponseMessage } from "@/models/http.model";
+// import { type ResponseWithPagination } from "@/models/http.model";
+// import { type Paginate } from "@/models/http.model";
+
 definePageMeta({
   name: "PageLogin",
   layout: "custom",
@@ -112,7 +118,7 @@ const router = useRouter();
 
 const loading = ref<boolean>(false);
 const showPassword = ref<boolean>(false);
-const form = reactive<LoginRequest>({
+const form = ref<LoginRequest>({
   username: "superadmin",
   password: "123456",
 });
@@ -120,7 +126,7 @@ const form = reactive<LoginRequest>({
 const onSubmit = async (event: Event) => {
   event.preventDefault();
 
-  if (!form.username || !form.password) {
+  if (!form.value.username || !form.value.password) {
     $swal.fire({
       icon: "warning",
       title: "warning !",
@@ -148,7 +154,7 @@ const onSubmit = async (event: Event) => {
     refToken.value =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
     const refUsername = setCookie("username");
-    refUsername.value = form.username || "";
+    refUsername.value = form.value.username || "";
 
     router.push("/");
   } catch (error) {
