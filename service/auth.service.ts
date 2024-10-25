@@ -1,10 +1,10 @@
 import type { LoginRequest } from "@/models/auth.model";
 import { client } from './httpClient';
 
-export function login(payload: LoginRequest) {
+export function login(body: LoginRequest) {
    return client("/auth/login", {
       method: "POST",
-      body: payload,
+      body: body,
    });
 }
 

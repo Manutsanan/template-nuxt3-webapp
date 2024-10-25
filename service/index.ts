@@ -1,7 +1,7 @@
-import * as account from './account.service'
+import * as example from './example.service'
 import * as auth from './auth.service'
 
 export default {
-   account,
+   example,
    auth,
 }
